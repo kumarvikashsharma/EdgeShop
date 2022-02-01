@@ -5,16 +5,17 @@ from django.views import View
 from product.models import productCategory
 
 class index(View):
+    
     def get(self,request):
         navigationProductCategory=productCategory.objects.filter(status=True)
-        productCategory = productCategory.objects.filter(status=True)[0:1]
+        homeProductCategory = productCategory.objects.filter(status=True).order_by('name')[0:3]
         context={
             'navigationProductCategory':navigationProductCategory,
-            'productCategory':productCategory
+            'homeProductCategory':homeProductCategory
             
         }
         
-        return render(request,'index.html')
+        return render(request,'index.html',context)
         
 
 
