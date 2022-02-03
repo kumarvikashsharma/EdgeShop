@@ -119,11 +119,10 @@
                     <nav class="header__menu">
                         <ul>
                             <li class="active"><a href="./index.html">Home</a></li>
-                            <li><a href="./shop-grid.html">Category</a></li>
-                            <li><a href="#">Pages</a>
+                             <li><a href="#">Category</a>
                                 <ul class="header__menu__dropdown">
-                                    {% for navigationProductCategory in navigationProductCategories%}
-                                    <li><a href="./shop-details.html">{{navigationProductCategories.name}}</a></li>
+                                    {% for navigationProductCategory in navigationProductCategories %}
+                                    <li><a href="./shop-details.html">{{navigationProductCategory.name}}</a></li>
                                     {% endfor %}
                                 </ul>
                             </li>
