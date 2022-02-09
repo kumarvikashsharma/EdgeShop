@@ -52,6 +52,7 @@
 
 
     <!-- Featured Section Begin -->
+    <!-- Featured Section Begin -->
     <section class="featured spad">
         <div class="container">
             <div class="row">
@@ -62,14 +63,15 @@
                     <div class="featured__controls">
                         <ul>
                             <li class="active" data-filter="*">All</li>
-                            {% for productCategory in productCategories%}
+                            {% for productCategory in productCategories %}
                                 <li data-filter=".product-category-{{productCategory.id}}">{{productCategory.name}}</li>
-                            {%endfor%}
+                            {% endfor %}
                             
                         </ul>
                     </div>
                 </div>
             </div>
+            
             <div class="row featured__filter">
                 {% for productCategory in productCategories %}
                     {% for product in productCategory.ProductCategory.all %}
@@ -88,8 +90,8 @@
                 {% endfor %}
             </div>
         </div>
-    </section>
-    <!-- Featured Section End -->
+    </section>    
+<!-- Featured Section End -->
 
     <!-- Banner Begin -->
     <div class="banner">

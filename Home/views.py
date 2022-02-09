@@ -3,6 +3,7 @@ from pstats import Stats
 from telnetlib import STATUS
 from django.shortcuts import render
 from django.views import View
+import product
 from product.models import productCategory
 
 class index(View):
@@ -21,4 +22,14 @@ class index(View):
         return render(request,'index.html',context)
         
 
-
+class productListing(View):
+    
+    template_name = 'productListing.html'
+    
+    def get(self,request,):
+        navigationProductCategories=productCategory.objects.filter(status=True)
+        # products=product.objects.filter(status=True)
+        context={
+            'navigationProductCategories':navigationProductCategories,
+        }
+        return render(request,self.template_name,context)
